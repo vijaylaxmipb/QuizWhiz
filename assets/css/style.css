@@ -61,4 +61,35 @@
     background: grey;
     color:lightblue;
 }
+#next-btn{
+    background: #001e4d;
+    color: #ffff;
+    font-weight: 500;
+    width: 150px;
+    border: 1;
+    border-radius: 5px;
+    margin: 20px auto 0;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 0;
+    display: block;
+    justify-content: space-evenly;
+    list-style-type:none;
+}
+
+#playAgain-btn{
+    background: #001e4d;
+    color: #ffff;
+    font-weight: 500;
+    width: 150px;
+    border: 1;
+    border-radius: 5px;
+    margin: 20px auto 0;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 0;
+    display: block;
+    justify-content: space-evenly;
+    list-style-type:none;
+}
 
