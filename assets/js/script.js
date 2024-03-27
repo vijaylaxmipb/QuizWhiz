@@ -1,155 +1,130 @@
-const questions = [
+const container = document.querySelector('.container');
+const questionBox = document.querySelector('.question');
+const optionsBox = document.querySelector('.options');
+const nextBtn = document.querySelector('.nextBtn');
+const scoreCard = document.querySelector('.scoreCard')
+
+//Array of objecs which stores que and answer//
+const quiz = [
     {
-        question: "Which planet has 145 moons?",
-        answers:[
-            { text: "Saturn", correct: true},
-            { text: "Mars", correct: false},
-            { text: "Mercury", correct: false},
-            { text: "Jupiter", correct: false},
-        ]
+        question: "Q.Which planet has 145 moons?",
+        options:["Saturn","Mars","Mercury","Jupiter"],
+        answer: "Saturn"
     },
     {
-        question: "In which country was the game of chess invented?",
-        answers:[
-            { text: "India", correct: true},
-            { text: "China", correct: false},
-            { text: "Greece", correct: false},
-            { text: "Japan", correct: false},
-        ]
+        question: "Q.In which country was the game of chess invented?",
+        options:["India","China","Greece","Japan"],
+        answer: "India"
 
     },
     {
         
-        question: "What was the first fruit to be eaten on the Moon?",
-        answers:[
-            { text: "Grapes", correct: false},
-            { text: "A peach", correct: true},
-            { text: "A starfruit", correct: false},
-            { text: "Apple", correct: false},
-        ]
+        question: "Q.What was the first fruit to be eaten on the Moon?",
+        options:["Grapes","A peach","A starfruit","Apple"],
+        answer:"A peach"
     },
     {
-        question: "Which continent is home to the snow leopard?",
-        answers:[
-            { text: "North America", correct: false},
-            { text: "Asia", correct: true},
-            { text: "South America", correct: false},
-            { text: "Africa", correct: false},
-        ]
-    },
-    {
-        question: "What word appears on cold taps in Italy?",
-        answers:[
-            { text: "Freddo", correct: true},
-            { text: "Froggie", correct: false},
-            { text: "Bruno", correct: false},
-            { text: "Carlo", correct: false},
-        ]
-    },
-    {
-        question: "Which country did Transylvania belong to from 11th century until 1918?",
-        answers:[
-            { text: "Germany", correct: false},
-            { text: "Romania", correct: false},
-            { text: "Britain", correct: false},
-            { text: "Hungary", correct: true},
-        ]
+        question: "Q.Which continent is home to the snow leopard?",
+        options:["North America","Asia","South America","Africa"],
+        answer:"Asia"
 
     },
     {
-        question: "WHICH of these is NOT a recognised name for a young beaver?",
-        answers:[
-            { text: "Mouse", correct: true},
-            { text: "Kit", correct: false},
-            { text: "Pup", correct: false},
-            { text: "Kitten", correct: false},
-        ]
+        question: "Q.What word appears on cold taps in Italy?",
+        options:["Freddo","Froggie","Bruno","Carlo"],
+        answer:"Freddo"
 
+    },
+    {
+        question: "Q.Which country did Transylvania belong to from 11th century until 1918?",
+        options:["Germany","Romania","Britain","Hungary"],
+        answer:"Hungary"
+    },
+    {
+        question: "Q.WHICH of these is NOT a recognised name for a young beaver?",
+        options:["Mouse","Kit","Pup","Kitten"],
+        answer:"Mouse"
     }
 ];
 
-const questionElement = document.getElementById("question");
-const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
-
 let currentQuestionIndex = 0;
 let score = 0;
+let quizCompleted =false;
 
+const showQuestion = () => {
+    //console.log("Question");
+    const questionElement = quiz[currentQuestionIndex];
+    questionBox.textContent = questionElement.question;
 
-function startQuiz(){
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next";
+    optionsBox.textContent = "";
+    for(let i=0;i<questionElement.options.length;i++){
+        const currentOption = questionElement.options[i];
+        const optionDiv = document.createElement('div');
+        optionDiv.textContent = currentOption;
+        optionDiv.classList.add('option');
+        optionsBox.appendChild(optionDiv);
+
+        optionDiv.addEventListener('click', ()=>{
+            if(optionDiv.classList.contains('selected')){
+                optionDiv.classList.remove('selected');
+            }else{
+                optionDiv.classList.remove('selected');
+            }
+        });
+    }
+}
+    //Function for checking answers
+    const checkAnswer = () => {
+        const selectedOption = document.querySelector('.option.selected');
+        if(selectedOption.textContent === quiz[currentQuestionIndex].answer){
+           alert("Correct Answer");
+           score++;
+        }else{
+            alert("Wrong Answer");  
+        }  
+        currentQuestionIndex++;
+        if(currentQuestionIndex < quiz.length){
+             showQuestion();
+         }else{
+            showScore();
+            quizCompleted = true;
+         }
+    }
+
+    //Function to show score
+    const showScore = () =>{
+        questionBox.textContent = "";
+        optionsBox.textContent ="";
+        scoreCard.textContent = `You scored ${score} out of ${quiz.length}`;
+        nextBtn.textContent = "Play Again";
+        nextBtn.addEventListener('click', () =>{
+            currentQuestionIndex = 0;
+            showQuestion();
+            nextBtn.textContent = "Next";
+            scoreCard.textContent = ""; 
+        });
+
+        }
+
     showQuestion();
-}
-
-  
-function showQuestion(){
-    resetState();
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.
-    question;
-
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answerButtons.appendChild(button);
-        if(answer.correct){
-            button.dataset.correct = answer.correct;
+    nextBtn.addEventListener('click',()=>{
+        const selectedOption = document.querySelector('.option.selected');
+        if(!selectedOption && nextBtn.textContent === "Next"){
+            alert("Select your answer");
+            return;
         }
-        button.addEventListener("click", selectAnswer);
-    });
-
-}
-
-function resetState(){
-    nextButton.style.display = "none";
-    while(answerButtons.firstpChild){
-        answerButtons.removeChild(answerButtons.firstChild);
-    }
-}
-
-function selectAnswer(e){
-    const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true";
-    if(isCorrect){
-        selectedBtn.classList.add("correct");  
-        score++; 
-    }else{
-        selectedBtn.classList.add("inCorrect");
-    }
-    Array.from(answerButtons.children).forEach(button => {
-        if(button.dataset.correct === "true"){
-            button.classList.add("correct");
+        if(quizCompleted){
+            nextBtn.textContent = "Next";
+            scoreCard.textContent ="";
+            currentQuestionIndex = 0;
+            showQuestion();
+            quizCompleted = false;
+            score = 0;
         }
-        button.disabled = true;
+        else{
+            checkAnswer();
+        }
+        
+        
     });
-    nextButton.style.display = "block";
-}
-
-function showScore(){
-      resetState();
-      questionElement.innerHTML = `You scored ${score} out of ${questions.length} !` ;
-      nextButton.innerHTML = "Play Again";
-      nextButton.style.display = "block";
-}
-function handleNextButton(){
-    currentQuestionIndex++;
-    if(currentQuestionIndex < questions.length){
-        showQuestion();
-    }else{
-        showScore();
-    } 
-}
-
-nextButton.addEventListener("click", ()=>{
-    if(currentQuestionIndex < questions.length){
-        handleNextButton();
-    }else{
-        startQuiz();
-    }
-});
-startQuiz();
 
