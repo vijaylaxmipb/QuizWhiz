@@ -4,8 +4,15 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
  }
+
  body{
     background:linear-gradient(120deg,rgba(20, 117, 228, 0.7),rgba(153, 59, 160, 0.5));
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    color:white;
+    place-items: center;
+    display: grid;
 
  }
  img{
@@ -31,7 +38,7 @@
  
  #heading {
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
     color: rgb(42, 53, 19);
     background: rgba(133, 248, 118, 0.5);
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -57,12 +64,15 @@
     cursor: pointer;
     transition: all 0.5s;
 }
-.btn:hover{
+.btn:hover:not([disabled]){
     background: grey;
     color:lightblue;
 }
+.btn :disabled{
+    cursor: no-drop;
+}
 #next-btn{
-    background: #001e4d;
+    background:rgba(99, 28, 31, 0.5);
     color: #ffff;
     font-weight: 500;
     width: 150px;
@@ -72,31 +82,13 @@
     cursor: pointer;
     text-align: center;
     padding: 10px 0;
-    display: block;
-    justify-content: space-evenly;
-    list-style-type:none;
+    display:block;
+    
 }
-
-#playAgain-btn{
-    background: #001e4d;
-    color: #ffff;
-    font-weight: 500;
-    width: 150px;
-    border: 1;
-    border-radius: 5px;
-    margin: 20px auto 0;
-    cursor: pointer;
-    text-align: center;
-    padding: 10px 0;
-    display: block;
-    justify-content: space-evenly;
-    list-style-type:none;
-}
-
 .correct{
-    background: #9aeabc;
+    background:#1e9451;
 }
 
 .incorrect{
-    background: #ff9393;
+    background: #af3e3e;
 }

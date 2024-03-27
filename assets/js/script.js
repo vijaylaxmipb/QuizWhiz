@@ -68,25 +68,17 @@ const questions = [
     }
 ];
 
-const question = document.getElementById("question");
+const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
-const option1 = document.getElementById("option1");
-const option2 = document.getElementById("option2");
-const option3 = document.getElementById("option3");
-const option4 = document.getElementById("option4");
-const playAgain = document.getElementById("playAgain");
-const heading = document.getElementById("heading");
-const score = document.getElementById('score');
-
 
 let currentQuestionIndex = 0;
-let scoreAmount = 0;
+let score = 0;
 
 
 function startQuiz(){
     currentQuestionIndex = 0;
-    scoreAmount = 0;
+    score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
 }
@@ -96,7 +88,7 @@ function showQuestion(){
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
-    question.innerHTML = questionNo + ". " + currentQuestion.
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.
     question;
 
     currentQuestion.answers.forEach(answer => {
@@ -123,7 +115,8 @@ function selectAnswer(e){
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
     if(isCorrect){
-        selectedBtn.classList.add("correct");   
+        selectedBtn.classList.add("correct");  
+        score++; 
     }else{
         selectedBtn.classList.add("inCorrect");
     }
@@ -136,5 +129,27 @@ function selectAnswer(e){
     nextButton.style.display = "block";
 }
 
+function showScore(){
+      resetState();
+      questionElement.innerHTML = `You scored ${score} out of ${questions.length} !` ;
+      nextButton.innerHTML = "Play Again";
+      nextButton.style.display = "block";
+}
+function handleNextButton(){
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length){
+        showQuestion();
+    }else{
+        showScore();
+    } 
+}
+
+nextButton.addEventListener("click", ()=>{
+    if(currentQuestionIndex < questions.length){
+        handleNextButton();
+    }else{
+        startQuiz();
+    }
+});
 startQuiz();
 
