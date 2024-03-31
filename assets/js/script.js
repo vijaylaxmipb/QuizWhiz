@@ -4,6 +4,8 @@ const optionsBox = document.querySelector('.options');
 const nextBtn = document.querySelector('.nextBtn');
 const scoreCard = document.querySelector('.scoreCard')
 const alert = document.querySelector('.alert');
+const startBtn = document.querySelector('.startBtn');
+const timer = document.querySelector('.timer');
 
 //Array of objecs which stores que and answer//
 const quiz = [
@@ -51,6 +53,8 @@ const quiz = [
 let currentQuestionIndex = 0;
 let score = 0;
 let quizCompleted =false;
+let timeLeft = 10;
+let timerId = none;
 
 const showQuestion = () => {
     //console.log("Question");
@@ -73,22 +77,30 @@ const showQuestion = () => {
             }
         });
     }
+
+    if(currentQuestionIndex < quiz.length){
+        startTimer();
+    }
 }
     //Function for checking answers
     const checkAnswer = () => {
         const selectedOption = document.querySelector('.option.selected');
         if(selectedOption.textContent === quiz[currentQuestionIndex].answer){
            //alert("Correct Answer");
-           showAlert("Correct Answer");
+           displayAlert("Correct Answer");
            score++;
         }else{
-            //alert("Incorrect Answer");  
-        }  showAlert("Incorrect Answer");
+            displayAlert(`Incorrect Answer!! ${quiz[currentQuestionIndex].answer} is correct Answer`);  
+        }  
+        timeLeft = 10;
         currentQuestionIndex++;
         if(currentQuestionIndex < quiz.length){
              showQuestion();
          }else{
             showScore();
+            stopTimer();
+
+
             quizCompleted = true;
          }
     }
@@ -98,28 +110,62 @@ const showQuestion = () => {
         questionBox.textContent = "";
         optionsBox.textContent ="";
         scoreCard.textContent = `You scored ${score} out of ${quiz.length}`;
-        showAlert("You have completed your Quiz");
+        displayAlert("You have completed your Quiz");
         nextBtn.textContent = "Play Again";
-       // nextBtn.addEventListener('click', () =>{
-          //  currentQuestionIndex = 0;
-           // showQuestion();
-           // nextBtn.textContent = "Next";
-           // scoreCard.textContent = ""; 
-        //});
         }
+
     //Function to show Alert
-        const showAlert = () =>{
-            alert.style.show = "block";
+        const displayAlert = (message) =>{
+            alert.style.display = "block";
             alert.textContent = message;
+            setTimer(() =>{
+                alert.style.display = "none";
+            }, 1500);
 
         }
 
-    showQuestion();
+    //Function to start Timer
+        const startTimer = () =>{
+            clearInterval(timerId);
+            timer.textContent = timeLeft;
+            const countDown = () =>{
+                timeLeft--;
+                timer.textContent = timeLeft;
+                if(timeLeft === 0){
+                    const confirmUser = confirm("Time out !! >Would you like another go?");
+                    if(confirmUser){
+                        timeLeft=10;
+                        startQuizGame();
+                    }else{
+                        startBtn.style.display ="block";
+                        container.style.display ="none";
+                        return;
+                    }
+                }
+            }
+            timerId = setInterval(countDown,1000);
+        }
+    //Function to Stop timer after 10 countdowns
+    const stopTimer = () =>{
+        clearInterval(timerId);
+    }
+        const startQuizGame = () => {
+            timeLeft = 10;
+            showQuestion();
+        }
+    //Add Event Listner to Start Btn
+    startBtn.addEventListener('click',() =>{
+        startBtn.style.display ="none";
+        container.style.display ="block";
+        startQuizGame();
+    });
+
+    //showQuestion();
     nextBtn.addEventListener('click',()=>{
         const selectedOption = document.querySelector('.option.selected');
         if(!selectedOption && nextBtn.textContent === "Next"){
             //alert("Select your answer");
-            showAlert("Select Your Answer");
+            displayAlert("Select Your Answer");
             return;
         }
         if(quizCompleted){

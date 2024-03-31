@@ -20,6 +20,7 @@
     max-width: 850px;
     padding: 30px;
     text-align: center;
+    display: none;
  }
  .container h1{
     font-size: 36px;
@@ -52,7 +53,7 @@
     background-color: #eee;
  }
 
- .nextBtn{
+ .nextBtn {
     width: 60%;
     font-size: 20px;
     padding: 12px 20px;
@@ -66,6 +67,23 @@
  }
  .nextBtn:hover{
     background-color: #1e9451;
+ }
+
+ .startBtn{
+   width: 20%;
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 20px auto 0 auto;
+    font-weight: 600;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    color: #ffff;
+    cursor: pointer;
+    padding-block: 20px;
+    text-align: center;
+
+
  }
  .option.selected{
     background-color: blue;
@@ -84,7 +102,22 @@
     font-size: 20px;
     margin-top: 20px;
  }
- 
+ .timer{
+   position: absolute;
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+   top: 30px;
+   right: 30px;
+   background-color: rgb(98, 0, 255);
+   font-size: 24px;
+   font-weight: 600;
+   border:2px solid #f00;
+   padding: 12px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
 
 
  /*img{
