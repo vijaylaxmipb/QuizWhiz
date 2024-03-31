@@ -71,6 +71,15 @@
     background-color: blue;
     color: white;
  }
+ .alert{
+   background-color: #1e9451;
+   border-radius: 5px;
+   width: 100%;
+   padding: 12px;
+   position: absolute;
+   display: none;
+   top: 0;
+ }
  .scoreCard{
     font-size: 20px;
     margin-top: 20px;
