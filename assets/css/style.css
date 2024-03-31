@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Lobster&family=Roboto+Condensed:wght@300;400&display=swap');
+
+/* Asterisk wildcard selector to override default styles added by the browser */
 * {
     margin: 0; 
     padding: 0;
@@ -6,7 +10,10 @@
  }
 
  body{
-    background:linear-gradient(to right bottom,rgba(37, 112, 199, 0.7),rgba(97, 55, 100, 0.5));
+    background-image:url(/assets/images/background\ image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;

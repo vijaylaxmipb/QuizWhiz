@@ -48,6 +48,21 @@ const quiz = [
         options:["Mouse","Kit","Pup","Kitten"],
         answer:"Mouse"
     }
+    {
+        question: "Q8.In Ancient Rome, how many days of the week were there?",
+        options:["Five","Eight","Six","Seven"],
+        answer: "Eight"
+    },
+    {
+        question: "Q9.What is the primary gas that makes up the Earth’s atmosphere?",
+        options:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],
+        answer: "Nitrogen"
+    },
+    {
+        question: "Q10.When was the world’s first ATM introduced, in Enfield, UK?",
+        options:["1967","1977","1987","1997"],
+        answer: "1967"
+    },
 ];
  //Variables
 let currentQuestionIndex = 0;
