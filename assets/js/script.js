@@ -3,8 +3,8 @@ const questionBox = document.querySelector('.question');
 const optionsBox = document.querySelector('.options');
 const nextBtn = document.querySelector('.nextBtn');
 const scoreCard = document.querySelector('.scoreCard')
-const alert = document.querySelector('.alert');
 const startBtn = document.querySelector('.startBtn');
+const alert = document.querySelector('.alert');
 const timer = document.querySelector('.timer');
 
 //Array of objecs which stores que and answer//
@@ -49,13 +49,14 @@ const quiz = [
         answer:"Mouse"
     }
 ];
-
+ //Variables
 let currentQuestionIndex = 0;
 let score = 0;
 let quizCompleted =false;
 let timeLeft = 10;
-let timerId = none;
+let timerId = null;
 
+//Arrow functions
 const showQuestion = () => {
     //console.log("Question");
     const questionElement = quiz[currentQuestionIndex];
@@ -99,9 +100,6 @@ const showQuestion = () => {
          }else{
             showScore();
             stopTimer();
-
-
-            quizCompleted = true;
          }
     }
 
@@ -112,13 +110,15 @@ const showQuestion = () => {
         scoreCard.textContent = `You scored ${score} out of ${quiz.length}`;
         displayAlert("You have completed your Quiz");
         nextBtn.textContent = "Play Again";
-        }
+        quizCompleted = true;
+        timer.style.display = "none";
+        } 
 
     //Function to show Alert
         const displayAlert = (message) =>{
             alert.style.display = "block";
             alert.textContent = message;
-            setTimer(() =>{
+            setTimeUp(() =>{
                 alert.style.display = "none";
             }, 1500);
 
@@ -128,6 +128,7 @@ const showQuestion = () => {
         const startTimer = () =>{
             clearInterval(timerId);
             timer.textContent = timeLeft;
+            
             const countDown = () =>{
                 timeLeft--;
                 timer.textContent = timeLeft;
@@ -135,7 +136,7 @@ const showQuestion = () => {
                     const confirmUser = confirm("Time out !! >Would you like another go?");
                     if(confirmUser){
                         timeLeft=10;
-                        startQuizGame();
+                        startGame();
                     }else{
                         startBtn.style.display ="block";
                         container.style.display ="none";
@@ -149,15 +150,16 @@ const showQuestion = () => {
     const stopTimer = () =>{
         clearInterval(timerId);
     }
-        const startQuizGame = () => {
+        const startGame = () => {
             timeLeft = 10;
+            timer.style.display = "flex";
             showQuestion();
         }
     //Add Event Listner to Start Btn
     startBtn.addEventListener('click',() =>{
         startBtn.style.display ="none";
         container.style.display ="block";
-        startQuizGame();
+        startGame();
     });
 
     //showQuestion();
@@ -175,11 +177,11 @@ const showQuestion = () => {
             showQuestion();
             quizCompleted = false;
             score = 0;
+            startGame();
         }
         else{
             checkAnswer();
-        }
-        
+        }  
         
     });
 
