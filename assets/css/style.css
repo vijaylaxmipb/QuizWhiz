@@ -31,7 +31,7 @@
  }
  .container h1,h2{
     font-size: 36px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     text-decoration: underline;
     text-underline-offset: 8px;
  }
@@ -40,10 +40,15 @@
     font-size: 20px;
     margin-top: 50px;
  }
- .question h3{
-   font-size: small;
-   margin-bottom: 1.5rem;
+ .question {
+   margin: 3rem auto;
+   width: 90vw;
+   padding: 2rem;
+   background: rgba(0,255,221,0.45);
+   cursor: default;
+   border-radius: 1rem;
  }
+
  .container .options{
     margin-top: 20px;
  }
@@ -148,12 +153,42 @@
     background: rgba(133, 248, 118, 0.5);
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
-/*
-.correct{
-    background:#1e9451;
+
+/* X-SMALL & SMALL MOBILE ****/
+
+@media only screen and (max-width: 375.99px) {
+   .startBtn {
+        width: auto;
+   }
+
+   .container h1,h2{
+      font-size: 6px;
+      font-weight: 100;
+      padding: 0 20px;
+      margin-top: 12vh;
+   }
+   .question {
+      margin: 3rem auto;
+      width: 90vw;
+}
+.option{
+   font-size: 5px;
+   margin-top: 5px;
+   font-size: smaller;
+   font-weight: 100;
+}
 }
 
-.incorrect{
-    background: #af3e3e;
+/** MEDIUM DEVICES - TABLETS PORTRAIT **/
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+
 }
-*/
+
+
+/** LARGE TABLETS - LANDSCAPE **/
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+   
+}
+
