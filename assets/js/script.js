@@ -10,57 +10,57 @@ const timer = document.querySelector('.timer');
 //Array of objecs which stores que and answer//
 const quiz = [
     {
-        question: "Q1.Which planet has 145 moons?",
+        question: "Q.Which planet has 145 moons?",
         options:["Saturn","Mars","Mercury","Jupiter"],
         answer: "Saturn"
     },
     {
-        question: "Q2.In which country was the game of chess invented?",
+        question: "Q.In which country was the game of chess invented?",
         options:["India","China","Greece","Japan"],
         answer: "India"
 
     },
     {
         
-        question: "Q3.What was the first fruit to be eaten on the Moon?",
+        question: "Q.What was the first fruit to be eaten on the Moon?",
         options:["Grapes","A peach","A starfruit","Apple"],
         answer:"A peach"
     },
     {
-        question: "Q4.Which continent is home to the snow leopard?",
+        question: "Q.Which continent is home to the snow leopard?",
         options:["North America","Asia","South America","Africa"],
         answer:"Asia"
 
     },
     {
-        question: "Q5.What word appears on cold taps in Italy?",
+        question: "Q.What word appears on cold taps in Italy?",
         options:["Freddo","Froggie","Bruno","Carlo"],
         answer:"Freddo"
 
     },
     {
-        question: "Q6.Which country did Transylvania belong to from 11th century until 1918?",
+        question: "Q.Which country did Transylvania belong to from 11th century until 1918?",
         options:["Germany","Romania","Britain","Hungary"],
         answer:"Hungary"
     },
     {
-        question: "Q7.WHICH of these is NOT a recognised name for a young beaver?",
+        question: "Q.WHICH of these is NOT a recognised name for a young beaver?",
         options:["Mouse","Kit","Pup","Kitten"],
         answer:"Mouse"
     },
     {
-        question: "Q8.In Ancient Rome, how many days of the week were there?",
+        question: "Q.In Ancient Rome, how many days of the week were there?",
         options:["Five", "Eight", "Six", "Seven"],
         answer: "Eight"
     },
 
     {
-        question: "Q9.What is the primary gas that makes up the Earth’s atmosphere?",
+        question: "Q.What is the primary gas that makes up the Earth’s atmosphere?",
         options:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],
         answer: "Nitrogen"
     },
     {
-        question: "Q10.When was the world’s first ATM introduced, in Enfield, UK?",
+        question: "Q.When was the world’s first ATM introduced, in Enfield, UK?",
         options:["1967","1977","1987","1997"],
         answer: "1967"
     },
@@ -172,8 +172,18 @@ const showQuestion = () => {
         const startGame = () => {
             timeLeft = 30;
             timer.style.display = "flex";
-            showQuestion();
+            randomQuestions();
         }
+
+    //Function for Random Questions
+    const randomQuestions = () =>{
+        for(let i=quiz.length-1; i>0; i--){
+            const j = Math.floor(Math.random() * (i+1));
+            [quiz[i],quiz[j]] = [quiz[j], quiz[i]];
+        }
+        currentQuestionIndex = 0;
+        showQuestion();
+    }
 
     //Add Event Listner to Start Btn
     startBtn.addEventListener('click',() =>{
