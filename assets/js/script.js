@@ -168,12 +168,6 @@ const showQuestion = () => {
     const stopTimer = () =>{
         clearInterval(timerId);
     }
-    
-        const startGame = () => {
-            timeLeft = 30;
-            timer.style.display = "flex";
-            randomQuestions();
-        }
 
     //Function for Random Questions
     const randomQuestions = () =>{
@@ -183,6 +177,13 @@ const showQuestion = () => {
         }
         currentQuestionIndex = 0;
         showQuestion();
+    }
+
+    //Function to start quiz
+    const startGame = () => {
+        timeLeft = 30;
+        timer.style.display = "flex";
+        randomQuestions();
     }
 
     //Add Event Listner to Start Btn

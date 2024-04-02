@@ -39,7 +39,7 @@
     font-size: 20px;
     margin-top: 25px;
  }
- 
+
  .container .options{
     margin-top: 20px;
  }
@@ -127,25 +127,6 @@
    align-items: center;
  }
 
-
- /*img{
-    height: 9rem;
-    width: 9rem;
-    border-radius: 50%;
-    
-}
-.img{
-    position: relative;
-}*/
-
-/* #heading {
-    text-align: center;
-    font-size: 3rem;
-    color: rgb(42, 53, 19);
-    background: rgba(133, 248, 118, 0.5);
-    font-family:Georgia, 'Times New Roman', Times, serif;
-}*/
-
 /* X-SMALL & SMALL MOBILE ****/
 
 @media only screen and (max-width: 375.99px) {
@@ -180,7 +161,26 @@
 
 /** LARGE TABLETS - LANDSCAPE **/
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
+   .container{
+      width: 100%;
+      margin-top: 50px;
+   }
+   .container .question{
+      font-size: 20px;
+   }
+   .containerh h1 h2{
+      font-size: 25px;
+   }
+   .timer{
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+   }
+   .startBtn{
+      width: 50%;
+   }
+
    
 }
 
