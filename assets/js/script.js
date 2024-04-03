@@ -1,11 +1,11 @@
-const container = document.querySelector('.container');
-const questionBox = document.querySelector('.question');
-const optionsBox = document.querySelector('.options');
-const nextBtn = document.querySelector('.nextBtn');
-const scoreCard = document.querySelector('.scoreCard')
-const startBtn = document.querySelector('.startBtn');
-const alert = document.querySelector('.alert');
-const timer = document.querySelector('.timer');
+const container = document.getElementById('container');
+const questionBox = document.getElementById('question');
+const optionsBox = document.getElementById('options');
+const nextBtn = document.getElementById('nextBtn');
+let scoreCard = document.getElementById('scoreCard')
+const startBtn = document.getElementById('startBtn');
+const alert = document.getElementById('alert');
+const timer = document.getElementById('timer');
 
 //Array of objecs which stores que and answer//
 const quiz = [
