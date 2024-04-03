@@ -1,11 +1,13 @@
-const container = document.getElementById('container');
-const questionBox = document.getElementById('question');
-const optionsBox = document.getElementById('options');
-const nextBtn = document.getElementById('nextBtn');
-let scoreCard = document.getElementById('scoreCard')
-const startBtn = document.getElementById('startBtn');
-const alert = document.getElementById('alert');
-const timer = document.getElementById('timer');
+
+//Retrieve a class so used querySelector
+const container = document.querySelector(".container");
+const questionBox = document.querySelector(".question");
+const optionsBox = document.querySelector(".options");
+const nextBtn = document.querySelector(".nextBtn");
+const scoreCard = document.querySelector(".scoreCard")
+const startBtn = document.querySelector(".startBtn");
+const alert = document.querySelector(".alert");
+const timer = document.querySelector(".timer");
 
 //Array of objecs which stores que and answer//
 const quiz = [
@@ -87,10 +89,10 @@ const showQuestion = () => {
         optionsBox.appendChild(optionDiv);
 
         optionDiv.addEventListener('click', ()=>{
-            if(optionDiv.classList.contains('selected')){
-               optionDiv.classList.remove('selected');
+            if(optionDiv.classList.contains('choose')){
+               optionDiv.classList.remove('choose');
             }else{
-                optionDiv.classList.add('selected');
+                optionDiv.classList.add('choose');
             }
         });
     }
@@ -101,8 +103,8 @@ const showQuestion = () => {
 }
     //Function for checking answers
     const checkAnswer = () => {
-        const selectedOption = document.querySelector('.option.selected');
-        if(selectedOption.textContent === quiz[currentQuestionIndex].answer){
+        const chooseOption = document.querySelector('.option.choose');
+        if(chooseOption.textContent === quiz[currentQuestionIndex].answer){
            //alert("Correct Answer");
            displayAlert("Correct Answer");
            score++;
@@ -195,8 +197,8 @@ const showQuestion = () => {
 
     //showQuestion();
     nextBtn.addEventListener('click',() =>{
-        const selectedOption = document.querySelector('.option.selected');
-        if(!selectedOption && nextBtn.textContent === "Next"){
+        const chooseOption = document.querySelector('.option.choose');
+        if(!chooseOption && nextBtn.textContent === "Next"){
             //alert("Select your answer");
             displayAlert("Select Your Answer");
             return;
