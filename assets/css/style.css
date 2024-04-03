@@ -10,8 +10,8 @@
  }
 
  body{
-    background-image:url(/assets/images/background-image.jpg);
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(to right bottom, #053064, #648597);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2rem;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,24 +26,27 @@
  .container{
     background: #fff;
     margin: 100px auto 0;
-    border-radius: 10px;
+    border-radius: 30px;
     width: 80%;
     max-width: 850px;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     display: none;
+    
  }
  .container h1{
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 20px;
     margin-top: 20px;
     text-decoration: underline;
     text-underline-offset: 8px;
+    font-family:'Lobster',sans-serif;
+   
+    
  }
  .container h2{
     font-weight: 25px;
-    color:#001e4d;
-    border-bottom: 1px solid #a38989;
+    border-bottom: 1px solid #965a5a;
     padding-bottom: 30px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -69,7 +72,7 @@
     width: 60%;
     text-align: left;
     cursor: pointer;
-   
+    transition: color 0.5s linear;
  }
 
  .option:hover{
@@ -98,7 +101,7 @@
     padding: 12px 20px;
     margin: 20px auto 0 auto;
     font-weight: 600;
-    background-color:#aa5555e1;
+    background-color:orange;
     border: none;
     border-radius: 5px;
     color:black;
@@ -109,7 +112,7 @@
 
  }
  .option.choose{
-    background-color:rgb(74, 153, 158);
+    background-color:lightcoral;
     color:rgb(17, 13, 13)
  }
  .alert{
