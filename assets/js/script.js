@@ -4,12 +4,13 @@ const container = document.querySelector(".container");
 const questionBox = document.querySelector(".question");
 const optionsBox = document.querySelector(".options");
 const nextBtn = document.querySelector(".nextBtn");
-const scoreCard = document.querySelector(".scoreCard")
+const scoreCard = document.querySelector(".scoreCard");
 const startBtn = document.querySelector(".startBtn");
 const alert = document.querySelector(".alert");
 const timer = document.querySelector(".timer");
 const wrapper = document.getElementById("wrapper");
 
+container.style.display = "none";
 //Array of objecs which stores que and answer//
 const quiz = [
     {
@@ -157,14 +158,9 @@ const showQuestion = () => {
                 timeLeft--;
                 timer.textContent = timeLeft;
                 if(timeLeft === 0){
-
-                    wrapper.innerHTML = `
-                    <div class="alert">Alert</div>
-                    <div class="container">
-                        <h1>You ran out of time!</h1>
-                        <button class="startBtn" onclick="{window.location.reload();}">Try Again</button>
-                    </div>
-                `;
+                    wrapper.innerHTML = `<h1>You ran out of time!</h1>
+                    <button class="startBtn" onclick="{window.location.reload();}">Try Again</button>
+                    `
                 }
             }
             timerId = setInterval(countDown,1000);
@@ -194,7 +190,7 @@ const showQuestion = () => {
 
     //Add Event Listner to Start Btn
     startBtn.addEventListener('click',() =>{
-        //startBtn.style.display ="none";
+        startBtn.style.display ="none";
         container.style.display ="block";
         startGame();
     });

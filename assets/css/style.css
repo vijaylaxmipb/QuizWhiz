@@ -23,6 +23,7 @@
     place-items: center;
    
  }
+
  .container{
     background: #fff;
     margin: 100px auto 0;
@@ -45,7 +46,8 @@
     
  }
  .container h2{
-    font-weight: 25px;
+    font-size: 25px;
+    font-weight: normal;
     border-bottom: 1px solid #965a5a;
     padding-bottom: 30px;
     margin-bottom: 20px;
@@ -56,6 +58,8 @@
  .container .question{
     font-size: 20px;
     margin-top: 25px;
+    width: 80%;
+    margin: 0 auto;
  }
 
  .container .options{
@@ -106,8 +110,8 @@
     border-radius: 5px;
     color:black;
     cursor: pointer;
-    padding-block: 20px;
     text-align: center;
+    
  }
  
  .option.choose{
@@ -117,11 +121,14 @@
  .alert{
    background-color:wheat;
    border-radius: 5px;
-   width: 100%;
    padding: 12px;
    position: absolute;
    display: none;
    top: 0;
+   width: 80%;
+   left: 50%;
+   transform: translate(-50%);
+   margin-top: 10px;
  }
  .scoreCard{
     font-size: 20px;
@@ -154,9 +161,7 @@
    .container .question{
       font-size: 20px;
    }
-   .containerh h1 h2{
-      font-size: 25px;
-   }
+
    .timer{
       font-size: 20px;
       width: 40px;
