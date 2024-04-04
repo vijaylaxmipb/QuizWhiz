@@ -1,5 +1,5 @@
 
-//Retrieve a class so used querySelector
+// To Retrieve a class used querySelector
 const container = document.querySelector(".container");
 const questionBox = document.querySelector(".question");
 const optionsBox = document.querySelector(".options");
@@ -8,6 +8,7 @@ const scoreCard = document.querySelector(".scoreCard")
 const startBtn = document.querySelector(".startBtn");
 const alert = document.querySelector(".alert");
 const timer = document.querySelector(".timer");
+const wrapper = document.getElementById("wrapper");
 
 //Array of objecs which stores que and answer//
 const quiz = [
@@ -79,7 +80,7 @@ const showQuestion = () => {
     //console.log("Question");
     const questionElement = quiz[currentQuestionIndex];
     questionBox.textContent = questionElement.question;
- 
+
     optionsBox.textContent = "";
     for(let i=0; i < questionElement.options.length; i++){
         const currentOption = questionElement.options[i];
@@ -89,13 +90,16 @@ const showQuestion = () => {
         optionsBox.appendChild(optionDiv);
 
         optionDiv.addEventListener('click', ()=>{
-            if(optionDiv.classList.contains('choose')){
-               optionDiv.classList.remove('choose');
-            }else{
-                optionDiv.classList.add('choose');
-            }
-        });
-    }
+            // First, remove 'choose' class from all options
+          const allOptions = document.querySelectorAll('.options .option');
+          allOptions.forEach(opt => {
+              opt.classList.remove('choose');
+          });
+          
+          // Then, add 'choose' class to the clicked option
+          optionDiv.classList.add('choose');
+      });
+  }
 
     if(currentQuestionIndex < quiz.length){
         startTimer();
@@ -153,19 +157,19 @@ const showQuestion = () => {
                 timeLeft--;
                 timer.textContent = timeLeft;
                 if(timeLeft === 0){
-                    const confirmUser = confirm("Time out !! Would you like another go?");
-                    if(confirmUser){
-                        timeLeft=30;
-                        startGame();
-                    }else{
-                        startBtn.style.display ="block";
-                        container.style.display ="none";
-                        return;
-                    }
+
+                    wrapper.innerHTML = `
+                    <div class="alert">Alert</div>
+                    <div class="container">
+                        <h1>You ran out of time!</h1>
+                        <button class="startBtn" onclick="{window.location.reload();}">Try Again</button>
+                    </div>
+                `;
                 }
             }
             timerId = setInterval(countDown,1000);
         }
+
     //Function to Stop timer after 30 countdowns
     const stopTimer = () =>{
         clearInterval(timerId);
@@ -190,7 +194,7 @@ const showQuestion = () => {
 
     //Add Event Listner to Start Btn
     startBtn.addEventListener('click',() =>{
-        startBtn.style.display ="none";
+        //startBtn.style.display ="none";
         container.style.display ="block";
         startGame();
     });
