@@ -9,8 +9,8 @@ const startBtn = document.querySelector(".startBtn");
 const alert = document.querySelector(".alert");
 const timer = document.querySelector(".timer");
 const wrapper = document.getElementById("wrapper");
+const welcomePage = document.getElementById("welcomePage");
 
-container.style.display = "none";
 //Array of objecs which stores que and answer//
 const quiz = [
     {
@@ -217,4 +217,5 @@ const showQuestion = () => {
         }  
         
     });
+
 
