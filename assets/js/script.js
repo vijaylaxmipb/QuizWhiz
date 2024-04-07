@@ -1,4 +1,5 @@
 
+/* jshint esversion: 6 */
 import quiz from './questions.js';
 
 // To Retrieve a class used querySelector
@@ -8,7 +9,7 @@ const optionsBox = document.querySelector(".options");
 const nextBtn = document.querySelector(".nextBtn");
 const scoreCard = document.querySelector(".scoreCard");
 const startBtn = document.querySelector(".startBtn");
-const alert = document.querySelector(".alert");
+const alerts = document.querySelector(".alert");
 const timer = document.querySelector(".timer");
 const wrapper = document.getElementById("wrapper");
 
@@ -48,7 +49,7 @@ const showQuestion = () => {
     if(currentQuestionIndex < quiz.length){
         startTimer();
     }
-}
+};
     //Function for checking answers
     const checkAnswer = () => {
         const chooseOption = document.querySelector('.option.choose');
@@ -68,7 +69,7 @@ const showQuestion = () => {
             showScore(); 
             quizCompleted = true;
          }
-    }
+    };
 
     //Function to show score
     const showScore = () => {
@@ -79,17 +80,17 @@ const showQuestion = () => {
         nextBtn.textContent = "Play Again";
         quizCompleted = true;
         timer.style.display = "none";
-        } 
+        };
 
     //Function to show Alert
         const displayAlert = (message) => {
-            alert.style.display = "block";
-            alert.textContent = message;
+            alerts.style.display = "block";
+            alerts.textContent = message;
             setTimeout(() => { 
-                alert.style.display = "none";
+                alerts.style.display = "none";
             }, 1500);
 
-        }
+        };
 
     //Function to start Timer
         const startTimer = () =>{
@@ -103,16 +104,16 @@ const showQuestion = () => {
                 if(timeLeft === 0){
                     wrapper.innerHTML = `<h1>You ran out of time!</h1>
                     <button class="startBtn" onclick="{window.location.reload();}">Try Again</button>
-                    `
+                    `;
                 }
-            }
+            };
             timerId = setInterval(countDown,1000);
-        }
+        };
 
     //Function to Stop timer after 30 countdowns
     const stopTimer = () =>{
         clearInterval(timerId);
-    }
+    };
 
     //Function for Random Questions
     const randomQuestions = () =>{
@@ -122,14 +123,14 @@ const showQuestion = () => {
         }
         currentQuestionIndex = 0;
         showQuestion();
-    }
+    };
 
     //Function to start quiz
     const startGame = () => {
         timeLeft = 30;
         timer.style.display = "flex";
         randomQuestions();
-    }
+    };
 
     //Add Event Listner to Start Btn
     startBtn.addEventListener('click',() =>{
