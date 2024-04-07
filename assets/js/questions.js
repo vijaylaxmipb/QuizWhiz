@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 //Array of objecs which stores que and answer//
 
 const quiz = [
