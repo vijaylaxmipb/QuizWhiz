@@ -1,6 +1,6 @@
 
 /* jshint esversion: 6 */
-import quiz from './questions.js';
+
 
 // To Retrieve a class used querySelector
 const container = document.querySelector(".container");
@@ -12,6 +12,67 @@ const startBtn = document.querySelector(".startBtn");
 const alerts = document.querySelector(".alert");
 const timer = document.querySelector(".timer");
 const wrapper = document.getElementById("wrapper");
+const modal = document.getElementById('modal');
+const closeModalBtn = document.querySelector('.close-modal');
+const openModalBtn = document.querySelector('.open-modal');
+
+const quiz = [
+    {
+        question: "Q.Which planet has 145 moons?",
+        options:["Saturn","Mars","Mercury","Jupiter"],
+        answer: "Saturn"
+    },
+    {
+        question: "Q.In which country was the game of chess invented?",
+        options:["India","China","Greece","Japan"],
+        answer: "India"
+
+    },
+    {
+        
+        question: "Q.What was the first fruit to be eaten on the Moon?",
+        options:["Grapes","A peach","A starfruit","Apple"],
+        answer:"A peach"
+    },
+    {
+        question: "Q.Which continent is home to the snow leopard?",
+        options:["North America","Asia","South America","Africa"],
+        answer:"Asia"
+
+    },
+    {
+        question: "Q.What word appears on cold taps in Italy?",
+        options:["Freddo","Froggie","Bruno","Carlo"],
+        answer:"Freddo"
+
+    },
+    {
+        question: "Q.Which country did Transylvania belong to from 11th century until 1918?",
+        options:["Germany","Romania","Britain","Hungary"],
+        answer:"Hungary"
+    },
+    {
+        question: "Q.WHICH of these is NOT a recognised name for a young beaver?",
+        options:["Mouse","Kit","Pup","Kitten"],
+        answer:"Mouse"
+    },
+    {
+        question: "Q.In Ancient Rome, how many days of the week were there?",
+        options:["Five", "Eight", "Six", "Seven"],
+        answer: "Eight"
+    },
+
+    {
+        question: "Q.What is the primary gas that makes up the Earth’s atmosphere?",
+        options:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],
+        answer: "Nitrogen"
+    },
+    {
+        question: "Q.When was the world’s first ATM introduced, in Enfield, UK?",
+        options:["1967","1977","1987","1997"],
+        answer: "1967"
+    },
+];
 
  //Variables
 let currentQuestionIndex = 0;
@@ -131,6 +192,38 @@ const showQuestion = () => {
         timer.style.display = "flex";
         randomQuestions();
     };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to open modal
+        function openModal() {
+            modal.style.display = 'block';
+        }
+    
+        // Function to close modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+    
+        // Event listener for opening modal
+        openModalBtn.addEventListener('click', openModal);
+    
+        // Event listener for closing modal
+        closeModalBtn.addEventListener('click', closeModal);
+    
+        // Event listener for clicking outside the modal to close
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    
+        // Event listener for start button to hide modal if open
+        startBtn.addEventListener('click', function() {
+            if (modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+    });
 
     //Add Event Listner to Start Btn
     startBtn.addEventListener('click',() =>{

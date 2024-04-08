@@ -2,7 +2,7 @@
 
 //Array of objecs which stores que and answer//
 
-const quiz = [
+/*export const quiz = [
     {
         question: "Q.Which planet has 145 moons?",
         options:["Saturn","Mars","Mercury","Jupiter"],
@@ -58,6 +58,5 @@ const quiz = [
         options:["1967","1977","1987","1997"],
         answer: "1967"
     },
-];
+];*/
 
-export default quiz;

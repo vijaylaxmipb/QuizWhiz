@@ -4,5 +4,39 @@
 
 -The aim of this site is to test the user's knowledge on general facts from around the globe.
 -This site can be great value to students or anyone who want to check their general knowledge.
--User of this quiz game will come to know few questions and answers and so they can share there 
- knowledge with others or in any compition.
+-Quiz Whiz is an exciting and fun quiz game that challenges its users on their general knowledge.
+-This Quiz site is for people who are interested in testing themselves on the general topics of the world.
+-This website is to be passed as my second project portfolio for code Institutes Fullstack development course
+
+## Core Purposes of the website
+This website is made for people who want to challenge on the general topics of the world.User will be able to show off their knowledge.The questions on this website are meticulously crafted to provide users with a thought with provoking challenges and designed to give unexpected answers.
+
+# UX Design
+
+## User Stories
+
+### As a first time user
+
+-I want a responsive site that will accomodate all screen sizes.
+-I want to see a unique and uniform design and consistent color scheme.
+-I want buttons that work as they are supposed to be.
+-I want a how to play button that gives instructions on how to play game.
+-I want an alert section which shows whether the option i clicked is correct or incorrect
+-I want to see an indication on whether i got a correct or wrong answer.
+-I want to see my score at the end of the game.
+-I want to see after the game to play again or try again button.
+
+### As a returning user
+
+-I want the site to be compatible to different devices in times i want to play.
+-I want to experience a refreshed and randomized order of questions in each game to prevent memorising and manitain the element of surprise.
+
+### This Website will be accessible to all devices and screens
+
+# Structure
+
+## Landing Page
+
+-Uses the visually appealing color combination Linear Gradient color background to provide a sense of warm welcoming.
+-Provides a minimalist design that features just 2 buttons,eliminating unneccessary complexity and straight forward experience.
+-conatains a model features that pops up,containing a set of instructions when the "How to play " button is clicked.
