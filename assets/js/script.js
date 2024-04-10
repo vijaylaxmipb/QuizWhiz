@@ -13,9 +13,9 @@ const startBtn = document.querySelector(".startBtn");
 const alerts = document.querySelector(".alert");
 const timer = document.querySelector(".timer");
 const wrapper = document.getElementById("wrapper");
-const modal = document.getElementById('modal');
-const closeModalBtn = document.querySelector('.close-modal');
-const openModalBtn = document.querySelector('.open-modal');
+const mode = document.getElementById('mode');
+const closeModeBtn = document.querySelector('.close-mode');
+const openModeBtn = document.querySelector('.open-mode');
 
 const quiz = questions;
 
@@ -139,37 +139,37 @@ const showQuestion = () => {
     };
 
     document.addEventListener('DOMContentLoaded', function() {
-        // Function to open modal
-        function openModal() {
-            modal.style.display = 'block';
+        // Function to open mode
+        function openMode() {
+            mode.style.display = 'block';
         }
     
-        // Function to close modal
-        function closeModal() {
-            modal.style.display = 'none';
+        // Function to close mode
+        function closeMode() {
+            mode.style.display = 'none';
         }
     
-        // Event listener for opening modal
-        openModalBtn.addEventListener('click', openModal);
+        // Event listener for opening mode
+        openModeBtn.addEventListener('click', openMode);
     
-        // Event listener for closing modal
-        closeModalBtn.addEventListener('click', closeModal);
+        // Event listener for closing mode
+        closeModeBtn.addEventListener('click', closeMode);
     
-        // Event listener for clicking outside the modal to close
+        // Event listener for clicking outside the mode to close
         window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                closeModal();
+            if (event.target === mode) {
+                closeMode();
             }
         });
     
-        // Event listener for start button to hide modal if open
+        // Event listener for start button to hide mode if open
         startBtn.addEventListener('click', function() {
-            if (modal.style.display === 'block') {
-                closeModal();
+            if (mode.style.display === 'block') {
+                closeMode();
             }
         });
     });
-
+ 
     //Add Event Listner to Start Btn
     startBtn.addEventListener('click',() =>{
         startBtn.style.display ="none";
