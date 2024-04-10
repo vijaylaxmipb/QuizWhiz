@@ -11,7 +11,7 @@
  }
 
  body{
-    background: linear-gradient(to right bottom, #053064, #648597); 
+    background: linear-gradient(to right bottom, #2c60a0, #61a4c9); 
     font-size: 1.2rem;
     background-position: center;
     background-repeat: no-repeat;
@@ -32,7 +32,7 @@
    font-weight: 600;
    text-align: center;
    text-decoration: solid;
-   color: #ffff;
+   text-shadow:black;
    background-color: #f1a74d; 
    width: 90vw;
    border-radius: 15px;
@@ -149,7 +149,7 @@
     padding: .4em 1em;
     font-size: 1.68rem;
     font-weight: bolder;
-    color: #f6fbf1;
+    color:rgb(35, 39, 39);
     -webkit-text-stroke: 1.3px black;
     border: 2px solid black;
     border-radius: 10px;
@@ -213,7 +213,7 @@
     padding: .5em 1em;
     font-size: 1.5rem;
     font-weight: bolder;
-    color: #f6fbf1;
+    color: rgb(35, 39, 39);
     -webkit-text-stroke: 1.3px black;
     border: 2px solid black;
     border-radius: 10px;
@@ -284,11 +284,11 @@
  }
  .timer{
    position: absolute;
-   width: 4rem;
-   height: 4rem;
+   width: 3rem;
+   height: 3rem;
    border-radius: 50%;
-   top: 50px;
-   right: 30px;
+   top: 5px;
+   right: 10px;
    background-color: rgb(221, 231, 128);
    font-size: 24px;
    font-weight: 600;
@@ -312,35 +312,43 @@
 
 /* X-SMALL & SMALL MOBILE ****/
 
-@media only screen and (max-width: 375.99px) {
+@media only screen and (max-width: 375px) {
    .container{
-      width: 40%;
+      width: 70%;
       margin-top: 10px;
       padding: 10px;
    }
+
+   h1 {
+      margin-top: 20px;
+      font-weight: 400;
+   }
+      
    .option,
    .nextBtn,
-   .startBtn,
-   .how-to-play {
-       width: 40%;
+   .startBtn {
+       width: 80%;
+       font-size: 20px;
    }
    .container .question{
-      font-size: 20px;
+      font-size: 18px;
    }
 
    .timer{
-      font-size: 20px;
-      width: 2rem;
-      height: 2rem;
+      font-size: 18px;
+      width: 1.8rem;
+      height: 1.8rem;
    }
    
    .open-mode{
-      width: 50%;
-      padding: .2em ;
+      width: 100%;
+      padding: .05em ;
+      margin-bottom: 30px;
    }
    .how-to-play-div{
       width: auto;
       height: auto;
+      font-size: 18px;
    }
 
 }
@@ -349,6 +357,7 @@
    .container {
        width: 50%;
        margin-top: 50px;
+       margin-bottom: 50px;
        padding: 20px;
    }
 }
@@ -372,9 +381,12 @@
       width: 1rem;
       height: 1rem;
    }
-   .startBtn,
+   .startBtn{
+      width:40%;
+   }
    .how-to-play{
-      width:auto;
+      width: 40%;
+      font-size: small;
    }
    #wrapper{
       height: auto;
