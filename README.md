@@ -4,11 +4,11 @@
 
 ## PROJECT OVERVIEW
 
--The aim of this site is to test the user's knowledge on general facts from around the globe.
--This site can be great value to students or anyone who want to check their general knowledge.
--Quiz Whiz is an exciting and fun quiz game that challenges its users on their general knowledge.
--This Quiz site is for people who are interested in testing themselves on the general topics of the world.
--This website is to be passed as my second project portfolio for code Institutes Fullstack development course
+- The aim of this site is to test the user's knowledge on general facts from around the globe.
+- This site can be great value to students or anyone who want to check their general knowledge.
+- Quiz Whiz is an exciting and fun quiz game that challenges its users on their general knowledge.
+- This Quiz site is for people who are interested in testing themselves on the general topics of the world.
+- This website is to be passed as my second project portfolio for code Institutes Fullstack development course
 
 ## Core Purposes of the website
 This website is made for people who want to challenge on the general topics of the world.The websites aim is to provide a somewhat challenging quiz to entertain online users. The questions are from a variety of categories and aren't specifically aimed at any subject in particular.
@@ -19,21 +19,21 @@ This website is made for people who want to challenge on the general topics of t
 
 ### As a first time user
 
--I want a responsive site that will accomodate all screen sizes.
--I want to be able to play a fun, interactive game that will entertain me.
--I would like to trial my general knowledge to see how much I know.
--I want buttons that work as they are supposed to be.
--I want a how to play button that gives instructions on how to play game.
--I want an alert section which shows whether the option i clicked is correct or incorrect
--I want to see an indication on whether i got a correct or wrong answer.
--I want to see my score at the end of the game.
--I want to see after the game to play again or try again button.
+- I want a responsive site that will accomodate all screen sizes.
+- I want to be able to play a fun, interactive game that will entertain me.
+- I would like to trial my general knowledge to see how much I know.
+- I want buttons that work as they are supposed to be.
+- I want a how to play button that gives instructions on how to play game.
+- I want an alert section which shows whether the option i clicked is correct or incorrect
+- I want to see an indication on whether i got a correct or wrong answer.
+- I want to see my score at the end of the game.
+- I want to see after the game to play again or try again button.
 
 ### As a returning user
 
--I want the site to be compatible to different devices in times i want to play.
--I want to experience a refreshed and randomized order of questions in each game to prevent memorising and manitain the element of surprise.
--I would like to have the option of choosing a variety of quizzes in different subject areas.
+- I want the site to be compatible to different devices in times i want to play.
+- I want to experience a refreshed and randomized order of questions in each game to prevent memorising and manitain the element of surprise.
+- I would like to have the option of choosing a variety of quizzes in different subject areas.
 
 ### This Website will be accessible to all devices and screens
 
@@ -41,9 +41,9 @@ This website is made for people who want to challenge on the general topics of t
 
 ## Landing Page
 
--Uses the visually appealing color combination Linear Gradient color background to provide a sense of warm welcoming.
--Provides a minimalist design that features just 2 buttons,eliminating unneccessary complexity and straight forward experience.
--conatains a model features that pops up,containing a set of instructions when the "How to play " button is clicked.
+- Uses the visually appealing color combination Linear Gradient color background to provide a sense of warm welcoming.
+- Provides a minimalist design that features just 2 buttons,eliminating unneccessary complexity and straight forward experience.
+- Conatains a model features that pops up,containing a set of instructions when the "How to play " button is clicked.
 
 ### User Goal
 
@@ -70,9 +70,9 @@ This website is made for people who want to challenge on the general topics of t
 ## Game Page
 
 ### User Goals
-> - Alert button when getting correct and incorrect anwers.
-> - Count down time when quiz is started.
-> - Have a score tracker to monitor how well I am doing with the quiz.
+  > - Alert button when getting correct and incorrect anwers.
+  > - Count down time when quiz is started.
+  > - Have a score tracker to monitor how well I am doing with the quiz.
 
 ### Website Goals
   
@@ -87,7 +87,7 @@ This website is made for people who want to challenge on the general topics of t
 - The questions were coded to give a random sequence of question every time, this is done to help maintain an element of surprise.
 - The Alert showes when the user clicks on option button to show whether the question answered is correct or incorrect.
 
-## Results Section
+## Results Page
 
 ### User Goals
   
@@ -98,6 +98,9 @@ This website is made for people who want to challenge on the general topics of t
 ### Website Goals
   
   > - A clickable button allowing the player to play a new game.
+  > - Provided a consistent color palette and design throughout,
+  > - A button that links the user back to the start of the game, and be able to start a fresh game.
+
 
 ### Results Section
 
@@ -105,11 +108,94 @@ This website is made for people who want to challenge on the general topics of t
 - Scoreboared button to show user score.
 - A button that will take me back to the start of the page.
 
-### Website Goals
 
-> - Provided a consistent color palette and design throughout,
-> - A button that links the user back to the start of the game, and be able to start a fresh game.
 
 ## Color Scheme
 A warm and welcoing color that helps user visual interest.
 
+# Features
+## Landing Page
+![Landing Page](assets/images/landing-page.png)
+
+The landidng page contains design of the Title,How to play button & Start Quiz button.The colors used is yellow orange #f2b264.
+
+## How To Play(Mode)
+ ![How To Play](assets/images/how-to-play-mode.png)
+  The how to play botton section contains a feature that pops up the game instruction. The name of the game is used by highlighting in a different color. The close button is located at the bottom for easy access to use.
+
+ ## Quiz Game Page
+ ![Start Quiz Button](assets/images/start-btn.png)
+ The game page is made with simple and uniform design.The page is displayed with random questions in every game.
+
+ ## Timer 
+ ![Timer](assets/images/timer.png)
+ The timer is displayed on the top right corner.When the use starts quiz game the timer is displayed and the timer set is 30 sec.If user fails to answer the question in 30s the try again page opens with a message.
+
+ ## Try Again
+ ![Try Again](assets/images/try-again-page.PNG)
+ The user is taken to try again page if the user fails to answer in 30 sec.
+
+ ## Scoreboard
+ ![Scoreboard](assets/images/scoreboard.png)
+ After the user completes answering the 10 questions, the user will be taken to the score page where their score is displayed. They will then be prompted to play again if they wish too.
+
+## Future Consideration
+
+I felt like i could have added more questions to this website but due to less time i wasn't able to add more features.
+The considerations that i am hoping to change in the future are:
+ - Add like easy,medium,difficult sections.
+ - Separate scoreboard for each easy,medium & difficult questions.
+ - More images and different background image to make look even better & best.
+
+# Technologies
+- HTML & CSS structure for the website.
+- Light house to test for accessibility.
+- [Gitpod](https://www.gitpod.io/) for developing code.
+- Chat GPT for helping me understand some of the code concepts.
+- [FontAwesome](https://fontawesome.com/) Icons.
+- [Google Fonts](https://fonts.google.com/) For Fonts.
+- [Chrome Developer Tool](https://developers.google.com/web/tools/chrome-devtools) For debugging and testing layouts.
+- [Jshint Validator](https://jshint.com/) to validate javascript code
+- [W3C HTML Markup Validator](https://validator.w3.org/) to validate HTML code.
+- [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS code.
+- [Tables Generator](https://www.tablesgenerator.com/) to help generate markdown table for this readme
+
+1. **W3 Markup Validation - HTML**
+![HTML Validator Results](assets/images/w3c-html-validator.png)
+
+2. **Css Validator Results**
+![CSS Validator Results](assets/images/css-validator.png)
+
+3. **Google Lighthouse Results**
+Desktop
+![Desktop Lighthouse Result](assets/images/lighthouse.png)
+
+# Bugs & Testing
+
+- Testing is done using W3C HTML Validator,jigsaw W3 CSS Validator & jshint.
+- A error was found during CSS validator "value error text-shadow,values not recognized".I fixed the error.
+
+# Deployment
+
+ This project was deployed using GitHub,below are the steps followed:
+
+1. Logged in to GitHub.com.
+2. Selected Quiz Whiz from the repositories.
+3. Clicked settings in the repository.
+4. Clicked the pages menu under the Code and automations section located on the left side of the screen.
+5. Selected "main" in the drop down menu under the source.
+6. Selected "root" on the next drop down menu and click.
+7. Waited for a few minutes and refreshed the page.
+8. Navigate back to my Quiz Whiz repository.
+9. Clicked Deployment tab in the right side of the page.
+10. Clicked the link under GitHub pages.
+
+# Credits
+
+I watched a lot of videos about coding a quiz game in Javascript. I would like to give credits to the people listed below:
+
+1. I would like to thank my Mentor Spencer Barriball for his guidance on making this project, he helped me provide guidance on features for my quiz game and pointed me to the right direction.
+
+2. [GreatStack](https://www.youtube.com/watch?v=PBcqGxrr9g8&t=445s) for the ideas and how to start the project.
+3. [CodeTraversal](https://www.youtube.com/@codetraversal) for the alert and timer function in the game.
+4. [Apna College](https://www.youtube.com/watch?v=gFWhbjzowrM&t=2642s) for the JavaScript concepts to understand.
