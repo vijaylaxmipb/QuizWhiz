@@ -111,7 +111,7 @@ This website is made for people who want to challenge on the general topics of t
 
 
 ## Color Scheme
-A warm and welcoing color that helps user visual interest.
+A warm and welcoming color that helps user visual interest.
 
 # Features
 ## Landing Page
@@ -160,6 +160,8 @@ The considerations that i am hoping to change in the future are:
 - [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS code.
 - [Tables Generator](https://www.tablesgenerator.com/) to help generate markdown table for this readme
 
+# Validator Testing
+
 1. **W3 Markup Validation - HTML**
 ![HTML Validator Results](assets/images/w3c-html-validator.png)
 
@@ -168,7 +170,9 @@ The considerations that i am hoping to change in the future are:
 
 3. **Google Lighthouse Results**
 Desktop
+- I confirm that the colors and fonts chosen are easy to read and accessible by running it through lighthouse in devtools.
 ![Desktop Lighthouse Result](assets/images/lighthouse.png)
+
 
 # Bugs & Testing
 
