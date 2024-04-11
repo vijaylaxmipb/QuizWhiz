@@ -170,6 +170,7 @@ The considerations that i am hoping to change in the future are:
 3. **Google Lighthouse Results**
 Desktop
 - I confirm that the colors and fonts chosen are easy to read and accessible by running it through lighthouse in devtools.
+
 ![Desktop Lighthouse Result](assets/images/lighthouse.png)
 
 
