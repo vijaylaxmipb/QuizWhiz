@@ -87,7 +87,7 @@ This website is made for people who want to challenge on the general topics of t
 - The questions were coded to give a random sequence of question every time, this is done to help maintain an element of surprise.
 - The Alert showes when the user clicks on option button to show whether the question answered is correct or incorrect.
 
-## Results Page
+## The Game Result
 
 ### User Goals
   
@@ -158,7 +158,6 @@ The considerations that i am hoping to change in the future are:
 - [Jshint Validator](https://jshint.com/) to validate javascript code
 - [W3C HTML Markup Validator](https://validator.w3.org/) to validate HTML code.
 - [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS code.
-- [Tables Generator](https://www.tablesgenerator.com/) to help generate markdown table for this readme
 
 # Validator Testing
 
@@ -175,9 +174,19 @@ Desktop
 
 
 # Bugs & Testing
-
+ ## Testing
 - Testing is done using W3C HTML Validator,jigsaw W3 CSS Validator & jshint.
+- I tested playing this quiz game in different browsers:Chrome,Firefox.
+- I confirm that the game result are correct.
+
 - A error was found during CSS validator "value error text-shadow,values not recognized".I fixed the error.
+##  Bugs
+- When i deployed my project to Githubs pages i discovered my quiz game was broken and links to other files CSS,HTML,JS did not work.
+- My mentor discovered this was because i had used absolute file paths as this in my code
+
+ <link rel="stylesheet" href="/assets/css/style.css">
+
+- Removing the starting /  fixed the problem.
 
 # Deployment
 
@@ -203,3 +212,4 @@ I watched a lot of videos about coding a quiz game in Javascript. I would like t
 2. [GreatStack](https://www.youtube.com/watch?v=PBcqGxrr9g8&t=445s) for the ideas and how to start the project.
 3. [CodeTraversal](https://www.youtube.com/@codetraversal) for the alert and timer function in the game.
 4. [Apna College](https://www.youtube.com/watch?v=gFWhbjzowrM&t=2642s) for the JavaScript concepts to understand.
+5. Readme file i refered code institute and some similar projects.
